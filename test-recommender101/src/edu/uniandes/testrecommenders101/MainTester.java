@@ -26,15 +26,17 @@ public class MainTester {
             recommender.setNeighbors("50");
             recommender.init();
             System.out.println("Termino");
-            //List<Integer> recItems = recommender.recommendItems(2).subList(0, 20);
+            List<Integer> recItems = recommender.recommendItems(2);
+            int  suma = 0;
             for(int ii = 0; ii < 10; ii++){
-            	float res = recommender.predictRating(2, 119707);
+            	float res = recommender.predictRating(ii, 119707);
+            	suma += res;
             	System.out.println(res);
             }
-            
-            //for(int i = 0; i < recItems.size(); i++) {
-            //    System.out.println("Item "+i+" "+recItems.get(i));
-            //}
+            System.out.println("promadio: "+suma/10);
+            for(int i = 0; i < recItems.size(); i++) {
+                System.out.println("Item "+i+" "+recItems.get(i));
+            }
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

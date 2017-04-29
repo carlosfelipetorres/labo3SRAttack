@@ -118,9 +118,9 @@ public class ItemInfoLoader {
 			
 			DataModel model= new DataModel();
 			DefaultDataLoader loader= new DefaultDataLoader();
-			loader.setFilename("data/movieTweetings/ratings.dat");
+			loader.setFilename("data/20K/ratings.dat");
 			loader.loadData(model);
-			String itemFileName = "data/movieTweetings/movies.dat";
+			String itemFileName = "data/20K/movies.dat";
 			
 			System.out.println("The dataset has numUsers:"+model.getUsers().size()+" numItems:"+model.getItems().size());
 			ItemInformation[] array= getItemsSortedByPopularity(model,itemFileName);
